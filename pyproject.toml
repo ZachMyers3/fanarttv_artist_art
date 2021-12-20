@@ -1,0 +1,44 @@
+[tool.black]
+line-length = 79
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+
+[tool.poetry]
+name = "FanartTV Artist Art"
+description="Gets artist art from using a directories folder structure"
+authors=["Zach Myers"]
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+python = ">=3.7,<4.0"
+typer = "^0.4.0"
+python-dotenv = "^0.19.2"
+mutagen = "^1.45.1"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+flake8 = "^3.8.3"
+pytest = "^5.4.3"
+requests = "^2.23.0"
+pytest-dotenv = "^0.5.2"
+sqlacodegen = {version = "3.0.0b2", allow-prereleases = true}
